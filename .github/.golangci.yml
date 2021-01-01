@@ -1,0 +1,54 @@
+linters-settings:
+  errcheck:
+    ignore: fmt:.*,github.com/go-utils/dedupe:Do
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  goimports:
+    local-prefixes: github.com/golangci/golangci-lint
+  golint:
+    min-confidence: 0
+  govet:
+    check-shadowing: true
+  lll:
+    line-length: 120
+  misspell:
+    locale: US
+    ignore-words: []
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - deadcode
+    - dogsled
+    - dupl
+    - errcheck
+    - goconst
+    - gofmt
+    - goimports
+    - golint
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - scopelint
+    - structcheck
+    - unconvert
+    - unused
+    - varcheck
+    - whitespace
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gomnd
+        - dupl
+
+service:
+  golangci-lint-version: 1.23.x
+  prepare:
+    - echo "here I can run custom commands, but no preparation needed for this repo"
