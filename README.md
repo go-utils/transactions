@@ -11,7 +11,7 @@ import (
 	"context"
 	"errors"
 
-    "github.com/go-utils/transactions"
+	"github.com/go-utils/transactions"
 )
 
 var failure = errors.New("failure")
